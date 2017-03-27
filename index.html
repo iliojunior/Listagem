@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Abertura</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body ng-controller="PrincipalController">
+<div class="container">
+    <div class="col-12">
+        <form action="" style="margin: 10px 0">
+            <input type="text" class="form-control" placeholder="Pesquisa" ng-model="search" id="search">
+        </form>
+        <div class="list-group">
+            <a ng-repeat="dir in directories | orderBy: name | filter:{name:search}" href="{{dir.link}}"
+               class="list-group-item list-group-item-action">
+                {{dir.name}}
+            </a>
+        </div>
+
+    </div>
+</div>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="app/start.js"></script>
+<script src="app/app.js"></script>
+</body>
+</html>
