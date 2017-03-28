@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Abertura</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body ng-controller="CreateController">
+<div class="container">
+    <div class="col-12">
+
+        <form action="#" ng-submit="criar_nova_pasta()" style="margin: 10px 0" class="col-12">
+            <div>
+                <input type="text" class="form-control" placeholder="Nome da pasta" ng-model="nova_pasta"
+                       id="nova_pasta">
+            </div>
+
+            <div>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Subpasta.." ng-model="nova_subpasta">
+                    <span class="input-group-btn">
+                        <button class="btn btn-secondary" ng-click="adicionar_subpasta(nova_subpasta)" type="button">Adicionar</button>
+                    </span>
+                </div>
+            </div>
+
+            <div class="btn-group" style="margin-bottom: 10px">
+                <a href="index.html" class="btn btn-danger">
+                    Voltar
+                </a>
+                <button type="submit" class="btn btn-primary">
+                    Salvar
+                </button>
+            </div>
+        </form>
+
+        <div class="col-12">
+
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="subdir in subpastas">
+                    {{subdir}}
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="app/start.js"></script>
+<script src="app/app.js"></script>
+</body>
+</html>

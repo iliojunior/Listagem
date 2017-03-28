@@ -8,11 +8,17 @@
 <body ng-controller="PrincipalController">
 <div class="container">
     <div class="col-12">
-        <form action="" style="margin: 10px 0">
-            <input type="text" class="form-control" placeholder="Pesquisa" ng-model="search" id="search">
+        <form action="" style="margin: 10px 0" class="form-inline">
+            <input type="text" class="form-control col-9" placeholder="Pesquisa" ng-model="search" id="search">
+            <div class="col-1"></div>
+            <a href="create.html" class="btn btn-primary">
+                Create a new
+            </a>
         </form>
+
         <div class="list-group">
-            <a ng-repeat="dir in directories | orderBy: name | filter:{name:search}" href="{{dir.link}}"
+            <a ng-repeat="dir in directories | orderBy: name | filter:{name:search}"
+               href="{{dir.link}}"
                class="list-group-item list-group-item-action">
                 {{dir.name}}
             </a>
