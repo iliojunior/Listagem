@@ -1,0 +1,27 @@
+{
+  "name": "Listagem de projetos",
+  "homepage": "https://github.com/iliojunior/Listagem",
+  "authors": [
+    "Ilio Junior <junior@ingadigital.com.br>"
+  ],
+  "description": "Projeto para listagem de pastas no apache",
+  "main": "index.html",
+  "keywords": [
+    "listagem",
+    "projetos",
+    "abertura"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.6.3",
+    "bootstrap": "v4.0.0-alpha.6"
+  }
+}
