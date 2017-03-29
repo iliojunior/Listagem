@@ -16,6 +16,7 @@ $pathPasta = "../" . $decoded_params->nome_pasta;
 
 if (!is_dir($pathPasta)) {
     mkdir($pathPasta);
+    chmod($pathPasta, 0777);
     echo "Pasta '{$decoded_params->nome_pasta}' criada!\r\n";
 } else
     echo "Pasta já existe: {$pathPasta}!\r\n";
@@ -25,6 +26,7 @@ foreach ($decoded_params->sub_pastas as $sub_pasta) {
 
     if (!is_dir($path_subPasta)) {
         mkdir($path_subPasta);
+        chmod($path_subPasta, 0777);
         echo "Sub pasta '{$sub_pasta}' criada!\r\n";
     } else
         echo "Sub pasta já existe: {$path_subPasta}!\r\n";
