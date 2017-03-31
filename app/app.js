@@ -10,8 +10,10 @@
 
 
     function PrincipalController($scope, $http) {
-        document.querySelector("#search").focus();
+
+        $scope.indexSelected = 0;
         $scope.directories = [];
+
 
         $http.get("getDir.php")
             .then(function (response) {
@@ -22,6 +24,41 @@
             .catch(function (err) {
                 console.error("Erro: " + err);
             });
+
+        function checkKey(event) {
+
+            var keyCode = event.keyCode;
+
+            switch (keyCode) {
+                case 40:
+                    if ($scope.indexSelected < $scope.directories.length)
+                        setSelected($scope.indexSelected + 1);
+                    break;
+
+                case 38:
+                    if ($scope.indexSelected > 0)
+                        setSelected($scope.indexSelected - 1);
+                    break;
+
+                case 13:
+                    if ($scope.indexSelected < $scope.directories.length && $scope.indexSelected > 0)
+                        window.location = $scope.directories[$scope.indexSelected - 1].link;
+                    break;
+            }
+
+        }
+
+        function isSelected(index) {
+            return (index === ($scope.indexSelected - 1));
+        }
+
+        function setSelected(position) {
+            $scope.indexSelected = position;
+        }
+
+        $scope.checkKey = checkKey;
+        $scope.isSelected = isSelected;
+
     }
 
     function CreateController($scope, $http) {
