@@ -4,19 +4,32 @@
     <meta charset="UTF-8">
     <title>Abertura</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        #lista {
+            padding-top: 62px;
+        }
+    </style>
 </head>
 <body ng-controller="PrincipalController">
 <div class="container" ng-keydown="checkKey($event)">
-    <div class="col-12">
-        <div style="margin: 10px 0" class="form-inline">
-            <input type="text" class="form-control col-9" placeholder="Pesquisa" ng-model="search" id="search"
-                   autocomplete="off">
-            <div class="col-1"></div>
-            <a href="create.html" class="btn btn-primary">
-                Create a new
-            </a>
-        </div>
 
+    <nav class="navbar fixed-top navbar-light bg-faded">
+        <div class="container">
+
+            <div class="form-inline">
+                <input type="text" class="form-control col-10" placeholder="Pesquisa" ng-model="search" id="search"
+                       autocomplete="off">
+                <div class="col"></div>
+                <div class="col-auto">
+                    <a href="create.html" class="btn btn-primary">
+                        Create a new
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="" id="lista">
         <div class="list-group">
             <a ng-repeat="dir in directories | orderBy: name | filter:{name:search} as dirFiltered"
                href="{{dir.link}}"
