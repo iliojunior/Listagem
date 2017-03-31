@@ -10,9 +10,11 @@
 
 
     function PrincipalController($scope, $http) {
+        document.querySelector("#search").focus();
 
         $scope.indexSelected = 0;
         $scope.directories = [];
+        $scope.dirFiltered = [];
 
 
         $http.get("getDir.php")
@@ -31,7 +33,7 @@
 
             switch (keyCode) {
                 case 40:
-                    if ($scope.indexSelected < $scope.directories.length)
+                    if ($scope.indexSelected < $scope.dirFiltered.length)
                         setSelected($scope.indexSelected + 1);
                     break;
 
@@ -41,8 +43,12 @@
                     break;
 
                 case 13:
-                    if ($scope.indexSelected < $scope.directories.length && $scope.indexSelected > 0)
-                        window.location = $scope.directories[$scope.indexSelected - 1].link;
+                    var i = ($scope.indexSelected - 1);
+
+                    var item = $scope.dirFiltered[$scope.indexSelected - 1];
+                    console.debug(item);
+                    if (i < $scope.dirFiltered.length && i >= 0)
+                        window.location.href = $scope.dirFiltered[$scope.indexSelected - 1].link;
                     break;
             }
 
