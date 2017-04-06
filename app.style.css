@@ -1,0 +1,28 @@
+.orange, .list-group-item.active {
+    background-color: #FF5722;
+}
+
+.list-group-item.active {
+    border-color: #FF5722;
+}
+
+.form-control:focus {
+    border-color: #FF5722;
+}
+
+.btn.btn-primary {
+    background-color: #3F51B5;
+    border-color: #3F51B5
+}
+
+.btn.btn-primary:hover {
+    background-color: #283593;
+    border-color: #283593;
+}
+
+@media screen and (max-width: 544px) {
+    nav .container {
+        padding: 0;
+        margin: 0;
+    }
+}

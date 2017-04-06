@@ -2,8 +2,11 @@
 <html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>Abertura</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app.style.css">
     <style>
         #lista {
             padding-top: 62px;
@@ -13,14 +16,14 @@
 <body ng-controller="PrincipalController">
 <div class="container" ng-keydown="checkKey($event)">
 
-    <nav class="navbar fixed-top navbar-light bg-faded">
+    <nav class="navbar fixed-top navbar-light bg-faded orange">
         <div class="container">
 
             <div class="form-inline">
-                <input type="text" class="form-control col-10" placeholder="Pesquisa" ng-model="search" id="search"
+                <input type="text" class="form-control col-12 col-md-10" placeholder="Pesquisa" ng-model="search" id="search"
                        autocomplete="off">
                 <div class="col"></div>
-                <div class="col-auto">
+                <div class="col-auto hidden-sm-down">
                     <a href="create.html" class="btn btn-primary">
                         Create a new
                     </a>
